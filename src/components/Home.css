@@ -1,0 +1,270 @@
+.home-section {
+  position: relative;
+  background: var(--primary-bg);
+  min-height: 100vh;
+}
+
+.home-content {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Status Indicator */
+.home-content .status-indicator {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* Top Left Text */
+.home-text-top {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  max-width: 45%;
+}
+
+/* Bottom Left Title */
+.home-title-bottom {
+  position: absolute;
+  bottom: 5rem;
+  left: 0;
+}
+
+.greeting {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 4.3rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1;
+  margin: 0;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+/* Profile Image */
+.profile-image {
+  margin: 2rem 0;
+  animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.profile-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: bottom;
+  border-radius: 50%;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.profile-img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  position: absolute;
+  bottom: 4rem;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeInUp 1s ease-out 1.2s both;
+}
+
+.cta-buttons .btn {
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cta-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+  background: transparent;
+  border: 2px solid var(--text-primary);
+  color: var(--text-primary);
+}
+
+.btn-primary:hover {
+  background: var(--text-primary);
+  color: var(--primary-bg);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--text-secondary);
+  color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+  background: var(--text-secondary);
+  color: var(--primary-bg);
+  border-color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .home-content .status-indicator {
+    position: static;
+    align-self: flex-end;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .home-text-top {
+    position: static;
+    transform: none;
+    text-align: left;
+    max-width: 100%;
+    align-self: flex-start;
+  }
+  
+  .profile-image {
+    margin: 1rem 0;
+  }
+  
+  .home-title-bottom {
+    position: static;
+    text-align: left;
+    margin: 1rem 0;
+    align-self: flex-start;
+  }
+  
+  .cta-buttons {
+    position: static;
+    align-self: flex-end;
+    margin-top: 1rem;
+  }
+  
+  .name {
+    font-size: 3rem;
+  }
+  
+  .profile-img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content {
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+  }
+  
+  .home-content .status-indicator {
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+  }
+  
+  .profile-image {
+    margin: 0.8rem 0;
+  }
+  
+  .home-title-bottom {
+    margin: 0.8rem 0;
+  }
+  
+  .cta-buttons {
+    margin-top: 0.8rem;
+  }
+  
+  .name {
+    font-size: 2rem;
+  }
+  
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+  }
+  
+  .greeting {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animation delays for staggered effect */
+.home-text-top .greeting {
+  animation: fadeInUp 1s ease-out 0.1s both;
+}
+
+.home-text-top .name {
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.home-title-bottom .title {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}

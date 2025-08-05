@@ -1,0 +1,179 @@
+.about-section {
+  background: var(--primary-bg);
+  padding: 60px 20px 0 20px;
+  margin-bottom: 60px;
+}
+
+/* Scroll Animations */
+.about-content {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-content.animate-out {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.about-content.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 6rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left Side */
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-title {
+  font-size: 4.3rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+        margin-bottom: 2.5rem;
+        line-height: 1.1;
+}
+
+.title-underline {
+  width: 80px;
+  height: 3px;
+  background: #00ff88 !important;
+        margin: 0 auto 2.5rem auto;
+        display: block;
+}
+
+/* Right Side */
+.about-right {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
+  pointer-events: none;
+}
+
+.about-subtitle {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: center;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.about-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Animations */
+.about-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.about-title {
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.title-underline {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.about-subtitle {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.about-description {
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: center;
+  }
+  
+  .about-left {
+    align-items: center;
+  }
+  
+  .about-title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+  }
+  
+  .about-subtitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 30px 20px 0 20px;
+    margin-bottom: 40px;
+  }
+  
+  .about-content {
+    gap: 3rem;
+  }
+  
+  .about-title {
+    font-size: 3rem;
+  }
+  
+  .about-subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .about-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 15px 15px 0 15px;
+    margin-bottom: 30px;
+  }
+  .about-title {
+    font-size: 2rem;
+  }
+  .about-subtitle {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+  }
+  .about-description {
+    font-size: 1rem;
+  }
+  .title-underline {
+            margin: 0 auto 1.2rem auto;
+            display: block;
+    height: 2px;
+    background: #00ff88 !important;
+  }
+}
